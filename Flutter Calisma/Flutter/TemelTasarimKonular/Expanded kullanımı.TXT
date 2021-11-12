@@ -1,0 +1,11 @@
+expanded yayılma işlemlerinde kullanılır.
+
+Row(
+
+        children: [
+
+          Expanded(flex: 70,child: Container(width: 100, height: 100,color: Colors.red)),
+          Expanded(flex: 30,child: Container(width: 100, height: 100,color: Colors.blue)),
+
+        ],
+      ),

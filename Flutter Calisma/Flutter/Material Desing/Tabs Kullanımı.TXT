@@ -1,0 +1,71 @@
+import 'package:flutter/material.dart';
+import 'package:proje_devam/Sayfa1.dart';
+import 'package:proje_devam/Sayfa2.dart';
+import 'package:proje_devam/Sayfa3.dart';
+
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.deepPurple,
+      ),
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+
+
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text("Yemekler"),
+          bottom: TabBar(
+            tabs: [
+              Tab(text: "Bir",),
+              Tab(icon: Icon(Icons.looks_two,color: Colors.cyanAccent,),),
+              Tab(text:"Üç",icon: Icon(Icons.looks_3),),
+
+            ],
+            indicatorColor: Colors.pink,
+            labelColor: Colors.orange,
+          ),
+        ),
+        body: TabBarView(
+          children: [
+            Sayfa1(),
+            Sayfa2(),
+            Sayfa3(),
+          ],
+        ),
+      ),
+    );
+  }
+
+
+
+
+
+
+
+
+
+}

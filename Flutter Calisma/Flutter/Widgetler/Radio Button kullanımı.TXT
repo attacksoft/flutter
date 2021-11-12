@@ -1,0 +1,45 @@
+class _MyHomePageState extends State<MyHomePage> {
+
+  int radioDeger = 0;
+
+
+
+@override
+  Widget build(BuildContext context) {
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Widgetlere Giriş"),
+ centerTitle: true,
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+
+
+      RadioListTile(
+        title: Text("Galatasaray"),
+        value: 1,
+        groupValue: radioDeger,
+        activeColor: Colors.red,
+        onChanged: (int? veri){
+          setState(() {
+            radioDeger = 1;
+          });
+          print("Galatasaray secildi");
+        },
+      ),
+
+            RadioListTile(
+              title: Text("Fenerbahçe"),
+              value: 2,
+              groupValue: radioDeger,
+              activeColor: Colors.indigo,
+              onChanged: (int? veri){
+                setState(() {
+                  radioDeger = 2;
+                });
+                print("Fenerbahçe secildi");
+              },
+            ),

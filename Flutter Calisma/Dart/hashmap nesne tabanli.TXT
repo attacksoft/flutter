@@ -1,0 +1,20 @@
+var k1 = Kisiler(111111, "AHMET");
+  var k2 = Kisiler(222222, "MEHMET");
+  var k3 = Kisiler(333333, "HASAN");
+
+  var kisiler = HashMap<int , String>();
+  kisiler[k1.tcno] = k1.ad;
+  kisiler[k2.tcno] = k2.ad;
+  kisiler[k3.tcno] = k3.ad;
+
+  var anahlarlar = kisiler.keys;
+
+  for(var a in anahlarlar)
+    {
+      
+      var  tcno = a;
+      print("*************");
+      print("Tc no : ${tcno}");
+     print("adı : ${kisiler[a]}");
+
+    }

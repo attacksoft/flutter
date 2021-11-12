@@ -1,0 +1,43 @@
+BASİT ALERTDİALOG
+  ElevatedButton(
+              child: Text("Basit Alert"),
+              onPressed: (){
+                
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context){
+                    return AlertDialog(
+                      title: Text("Başlık"),
+                      content: Text("İçerik"),
+                      actions: [
+                        TextButton(
+                          child: Text("İptal"),
+                          onPressed: (){
+                            Navigator.pop(context);
+                          },
+                        ),
+
+                        TextButton(
+                          child: Text("Tamam"),
+                          onPressed: (){
+                          print("Tamam seçildi");
+                          },
+                        ),
+
+                        TextButton(
+                          child: Text("Bilmiyorum"),
+                          onPressed: (){
+                            print("Tamam seçildi");
+                          },
+                        ),
+
+
+
+
+                      ],
+                    );
+                  }
+                );
+                
+              },
+            ),

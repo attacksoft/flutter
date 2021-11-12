@@ -1,0 +1,32 @@
+import 'package:collectionn/Ogrenciler.dart';
+
+void main()
+{
+  var o1 = Ogrenciler(100,"Ahmet", "9A");
+  var o2 = Ogrenciler(200,"Mehmet", "9B");
+  var o3 = Ogrenciler(300,"Hasan", "9C");
+
+  var liste = <Ogrenciler>[];
+
+  liste.add(o1);
+  liste.add(o2);
+  liste.add(o3);
+
+  Iterable<Ogrenciler> filtrelenenListe = liste.where((ogrenci){
+    //return ogrenci.no > 200;  no 200 den büyük olanlar gelir
+    return ogrenci.ad.contains("t"); //adında t bulunan gelir
+    
+  });
+
+  liste = filtrelenenListe.toList();
+
+  for(var o in liste)
+  {
+    print("*******");
+    print("Öğrenci No : ${o.no}");
+    print("Öğrenci Ad : ${o.ad}");
+    print("Öğrenci Sınıfı : ${o.sinif}");
+
+  }
+
+}

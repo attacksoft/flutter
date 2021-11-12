@@ -1,0 +1,2 @@
+ios icin 1024 x 1024
+android icin 512 x 512

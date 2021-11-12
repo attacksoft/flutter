@@ -1,0 +1,106 @@
+ios > AppDelegate.switf te bool süslü parantez içine eklenecek kod
+if #available(iOS 10.0, *){
+UNUserNotificationCenter.current().delegate = self as? UNUserNotificationCenterDelegate
+}
+
+pupspec.yaml ise flutter_local_notifications: ^5.0.0 kütüphanesi eklenmesi gerekiyor.
+
+
+main kodları 
+
+import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+
+
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+
+  var flp = FlutterLocalNotificationsPlugin();
+
+  Future<void> kurulum() async{
+    var androidAyari = AndroidInitializationSettings("@mipmap/ic_launcher");
+    var iosAyari = IOSInitializationSettings();
+    var kurulumAyari = InitializationSettings(android: androidAyari , iOS: iosAyari);
+
+    await flp.initialize(kurulumAyari,onSelectNotification: bildirimSecilme);
+
+  }
+
+  Future<void> bildirimSecilme(String? payLoad) async{
+    if(payLoad!=null){
+      print("Bildirim secildi : $payLoad");
+    }
+  }
+
+  Future<void> bildirimGoster() async{
+    var androidBildirimDetay = AndroidNotificationDetails("kanal ıd", "Kanal Başlık", "Kanal Açıklama",
+    priority: Priority.high,
+      importance: Importance.max,
+    );
+    var iosBildirimDetay = IOSNotificationDetails();
+    var bildirimDetay = NotificationDetails(android:androidBildirimDetay,iOS:iosBildirimDetay);
+
+    await flp.show(0, "Başlık", "İçerik" , bildirimDetay, payload: "payload içierk");
+
+  }
+
+
+  @override
+  void initState() {
+    super.initState();
+    kurulum();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Anasayfa"),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            ElevatedButton(
+              child: Text("Bildirim Oluştur"),
+              onPressed: (){
+                bildirimGoster();
+              },
+            ),
+
+            ElevatedButton(
+              child: Text("Bildirim Oluştur (Gecikmeli)"),
+              onPressed: (){
+
+              },
+            ),
+          ],
+        ),
+      ),
+
+    );
+  }
+}

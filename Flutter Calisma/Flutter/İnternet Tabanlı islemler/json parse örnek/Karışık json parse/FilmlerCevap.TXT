@@ -1,0 +1,20 @@
+
+import 'package:flutter_json_parse/Filmler.dart';
+
+class FilmlerCevap{
+
+  int success;
+  List<Filmler> filmListesi;
+
+  FilmlerCevap(this.success, this.filmListesi);
+
+  factory FilmlerCevap.fromJson(Map<String , dynamic> json){
+
+    var jsonArray = json["filmler"] as List;
+    List<Filmler> filmListesi = jsonArray.map((jsonArrayNesnesi) => Filmler.fromJson(jsonArrayNesnesi)).toList();
+
+    return FilmlerCevap(json["success"] as int , filmListesi);
+
+
+  }
+}

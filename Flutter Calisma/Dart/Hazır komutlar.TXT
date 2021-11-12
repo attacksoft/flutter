@@ -1,0 +1,27 @@
+int min = 5;
+ int max = 10;
+
+ var r = Random();
+
+ int sayi = min + r.nextInt((max-min)+1); //5 ile 10 arasında sayı üretir
+  print(sayi);
+
+
+  double x = 6.5;
+
+  int c = x.ceil();  // yularıya yuvarlar
+print(c);
+
+ int f = x.floor(); //aşağıya yuvarlar
+ print(f);
+
+ double s = sqrt(x);  //karakök hesaplama
+ print(s);
+
+ int y = -10;
+ int a = y.abs(); //mutlak hesaplar.
+ print(a);
+
+
+ int p = pow(2,3); //üslü sayıları hesaplama
+ print(p);

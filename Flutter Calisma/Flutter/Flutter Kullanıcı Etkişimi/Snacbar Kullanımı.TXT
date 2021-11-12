@@ -1,0 +1,59 @@
+ children: <Widget>[
+
+            ElevatedButton(
+              child: Text("Varsayılan"),
+              onPressed: (){
+
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text("Merhaba"),),
+                );
+              },
+            ),
+
+            ElevatedButton(
+              child: Text("Snacbar Action"),
+              onPressed: (){
+
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text("Silmek İstiyor musun ?"),
+                    action: SnackBarAction(
+                      label: "Evet",
+                      onPressed: (){
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text("Silindi"),),
+                        );
+
+                      },
+                    ),
+                  ),
+                );
+
+              },
+            ),
+
+
+            ElevatedButton(
+              child: Text("Snacbar Özel"),
+              onPressed: (){
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    backgroundColor: Colors.white,
+                    duration: Duration(seconds: 10),
+                    content: Text("İnternet Bağlantısı YOK !!!",style: TextStyle(color: Colors.indigoAccent),),
+                    action: SnackBarAction(
+                      label: "Tekrar Dene",
+                       textColor: Colors.red,
+                       onPressed: (){
+                        print("Tekrar Denendi");
+                     },
+
+
+                    ),
+                  ),
+                );
+              },
+            ),
+
+
+          ],

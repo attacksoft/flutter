@@ -1,0 +1,74 @@
+import 'package:flutter/material.dart';
+import 'package:proje_devam/Sayfa1.dart';
+import 'package:proje_devam/Sayfa2.dart';
+import 'package:proje_devam/Sayfa3.dart';
+
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.deepPurple,
+      ),
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+
+
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+
+  var sayfaListe = [Sayfa1(), Sayfa2(), Sayfa3()];
+
+  int secilenIndeks = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Yemekler"),
+
+      ),
+      body:sayfaListe[secilenIndeks],
+
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.looks_one),
+            label: "Bir"
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.looks_two),
+              label: "İki"
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.looks_3),
+              label: "Üç"
+          ),
+        ],
+        backgroundColor: Colors.deepPurple,
+        selectedItemColor: Colors.orange,
+        unselectedItemColor: Colors.white,
+        currentIndex: secilenIndeks,
+        onTap: (indeks){
+        setState(() {
+          secilenIndeks = indeks;
+        });
+        },
+      ),
+    );
+  }
+}

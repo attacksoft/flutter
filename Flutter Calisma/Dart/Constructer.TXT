@@ -1,0 +1,16 @@
+class Ogrenciler{
+
+  int no;
+  String ad;
+
+  Ogrenciler({required this.no , required this.ad});
+  
+}
+
+
+********************************
+
+
+  var ogrenci = Ogrenciler(no:100,ad:"Atak");
+
+print(ogrenci.ad);

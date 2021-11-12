@@ -1,0 +1,7 @@
+
+
+  String yazi = "Mehmet \"nasılsın\" dedi";
+  // mehmet "nasılsıné dedi
+
+  var yazi1 = "Merhaba bu \"flutter\" \neğitiminde dart \tdilini \\öğreniceğiz";
+  print(yazi1);

@@ -1,0 +1,10 @@
+ appBar: AppBar(
+        title: Text("Sayfa B"),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: (){
+            print("Appbar geri tuşu tıklandı");
+            Navigator.push(context, MaterialPageRoute(builder: (context) => Anasayfa()));
+          },
+        ),
+      ),

@@ -1,0 +1,3 @@
+SafeAre verek widgetleri telefon çerçevesindeki nesnelerden uzak tutar.
+
+örn: üste bulunan saatin üstüne widget koymaz uzak tutar

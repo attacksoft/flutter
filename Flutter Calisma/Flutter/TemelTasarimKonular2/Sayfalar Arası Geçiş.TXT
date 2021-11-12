@@ -1,0 +1,20 @@
+ilk ekrana döner ilk ekran geri tuşu olmaz-
+---------------------------------------------
+Navigator.of(context).popUntil((route) => route.isFirst);
+
+
+
+normal geçiş
+-------------
+ Navigator.push(context , MaterialPageRoute(builder: (context) => SayfaA()));
+
+
+
+Bir önceki sayfaya döner
+Navigator.pop(context);
+
+
+
+
+Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SonucEkrani()));
+//geçmekte olduğu ekranı hafızadan siler ve diğer sayfada geri dönüşü yapılırsa ansayfaya gider

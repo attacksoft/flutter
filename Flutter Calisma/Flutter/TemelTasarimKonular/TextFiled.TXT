@@ -1,0 +1,16 @@
+TextField(
+                  decoration: InputDecoration(
+                    hintText: "Kullanıcı Adı",
+                    filled: true,
+                    fillColor: Colors.white,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                    ),
+                  ),
+
+*************************************************************************************
+
+PAROLA YAPMA
+
+TextField(
+                  obscureText: true,),

@@ -1,0 +1,34 @@
+class _MyHomePageState extends State<MyHomePage> {
+
+  @override
+  Widget build(BuildContext context) {
+ 
+   //*******************************************
+    var ekranBilisi = MediaQuery.of(context);
+    final double yukseklik = ekranBilisi.size.height;
+    final double genislik = ekranBilisi.size.width;
+    //**************************************************
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      body:Column(
+        children: [
+
+            Padding(
+              padding: EdgeInsets.only(top: yukseklik/100),
+              child: SizedBox(
+                width: genislik/2,
+                  height: yukseklik/5,
+                  child: Image.asset("resim/ay.jpeg")
+              ),
+            ),
+
+          Container(width: genislik,height: yukseklik/4,color: Colors.red,),
+          Text("Merhaba",style: TextStyle(fontSize: genislik/18),),
+        ],
+      ),
+
+    );
+  }
+}

@@ -1,0 +1,20 @@
+ ElevatedButton(
+              child: Text("Göster"),
+              onPressed: (){
+                ScaffoldMessenger.of(context).showMaterialBanner(
+                  MaterialBanner(
+                    content: Text("İçerik burda yer alacak"),
+
+                    leading: Icon(Icons.info),
+                    backgroundColor: Colors.yellow,
+                    actions: [
+                      TextButton(
+                        child: const Text('Dismiss'),
+                        onPressed: () => ScaffoldMessenger.of(context)
+                            .hideCurrentMaterialBanner(),
+                      ),
+                    ],
+                  ),
+                );
+              },
+            ),

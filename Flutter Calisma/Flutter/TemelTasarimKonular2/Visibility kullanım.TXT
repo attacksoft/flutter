@@ -1,0 +1,22 @@
+ sayfa state altına  yazmamız gerekli
+bool kontrol = true;
+ 
+
+Visibility(
+              visible: kontrol,
+                child: Text("Merhaba")
+            ),
+
+            ElevatedButton(onPressed: (){
+            setState(() {
+              kontrol = true;
+            });
+            }, child: Text("Durum 1"),
+            ),
+
+            ElevatedButton(onPressed: (){
+              setState(() {
+                kontrol = false;
+              });
+            }, child: Text("Durum 2"),
+            ),

@@ -1,0 +1,15 @@
+Kullanım amacı : Yükselik ve genişlik veremediğimiz widget yada boşluk eklemek için kullanılır
+
+SizedBox(
+      width: 100,
+            height: 200,
+            child: Container(width: 50,height: 50,color: Colors.red,),
+          ),
+
+
+yada boşluk eklemek için
+
+SizedBox(
+      width: 100,
+            height: 200,
+          ),

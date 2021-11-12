@@ -1,0 +1,35 @@
+var sayilar = HashSet<int>();
+
+  var isimler = HashSet.from(["Ahmet","Mehmet"]);
+
+  var meyveler = HashSet<String>();
+
+  meyveler.add("Çilek");
+  meyveler.add("Muz");
+  meyveler.add("Elma");
+  meyveler.add("Kivi");
+  meyveler.add("Kivi");
+
+  print(meyveler);
+
+print(meyveler.elementAt(3));
+
+print(meyveler.isEmpty); //boş mu dolu mu
+
+  print(meyveler.contains("Muz")); //muz var mı yok mu
+
+
+  for(var m in meyveler)
+    {
+      print("Sonuç : $m");
+    }
+
+  print("***********************");
+  for(var i = 0; i <meyveler.length ; i++)
+    {
+      print("${i+1}.Meyve : ${meyveler.elementAt(i)}");
+
+    }
+
+  meyveler.remove("Kivi");
+  print(meyveler);

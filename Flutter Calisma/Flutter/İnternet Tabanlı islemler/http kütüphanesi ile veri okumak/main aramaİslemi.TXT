@@ -1,0 +1,20 @@
+
+  Future<List<Kisiler>> kisilerAra(String aramaKelimesi) async{
+    var url = Uri.parse("http://muhammedsoft.site/tum_kisiler_arama.php");
+    var veri = {"kisi_ad":aramaKelimesi};
+    var reply = await http.post(url , body: veri);
+    return kisilerParse(reply.body);
+
+  }
+
+  Future<void> kisilerGoster() async{
+    var liste = await kisilerAra("Muhammed");
+
+    for(var k in liste){
+      print("**********");
+      print("${k.kisi_id}");
+      print("${k.kisi_ad}");
+      print("${k.kisi_tel}");
+    }
+
+  }

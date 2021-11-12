@@ -1,0 +1,30 @@
+   PopupMenuButton(
+              child: Icon(Icons.open_in_new),
+              itemBuilder: (context) => [
+                PopupMenuItem(
+                  value: 1,
+                  child: Text("Sil",style: TextStyle(color: Colors.red),),
+                ),
+
+                PopupMenuItem(
+                  value: 2,
+                  child: Text("Güncelle",style: TextStyle(color: Colors.indigo),),
+                ),
+              ],
+              onCanceled: (){
+                print("Seçim Yapılmadı");
+              },
+              onSelected: (menuItemValue){
+                if(menuItemValue == 1)
+                  {
+                    print("Sil seçildi");
+                  }
+
+                if(menuItemValue == 2)
+                {
+                  print("Güncelle seçildi");
+                }
+
+
+              },
+            ),

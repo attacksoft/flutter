@@ -1,0 +1,32 @@
+not : kullanıla bilmesi en az sdk: ">=2.12.0 <3.0.0" skd olması lazım
+
+ String? mesaj = null;
+
+
+  mesaj = "Merhaba";
+
+  String? isim = null;
+
+  isim = "Ahmet";
+
+  //Yöntem 1 : ?  varsa boş olursa hata vermez
+
+  print("sonuc 1 : ${isim?.toUpperCase()}");
+
+
+  //yöntem 2 : !
+
+
+  print("Sonuc 2 : ${isim!.toUpperCase()}"); //riskli durum
+  //boş ise uygulama çöker
+
+  //Yöntem 3 : if
+
+  if(isim != null)
+    {
+      print("Sonuç 3 : ${isim.toUpperCase()}");
+    }
+  else
+      {
+        print("İsim boş olmaz");
+      }

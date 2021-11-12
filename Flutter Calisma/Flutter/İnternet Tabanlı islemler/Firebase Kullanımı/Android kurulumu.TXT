@@ -1,0 +1,40 @@
+1) Android > app > src > build.gradle girip 
+
+ defaultConfig { 
+        applicationId "com.muhammedatak.firebae" //burdak com.muhammedatak.firebae kopyalayıp 
+        minSdkVersion 16
+        targetSdkVersion 30
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+    }
+
+2)Firabase sitesinde android kısmına kopyalayıp uygulamayı kaydet diyoruz
+
+3)  json dosyasını indiriyoruz
+
+4)  İndirilen dosyayı kopyalıyouz build.gradle üzerine tıklayıp yapıştırıyoruz.
+
+5) Sonraki diyoruz classpath 'com.google.gms:google-services:4.3.10' bu kodu  üsteki build.gradle
+değil alttaki build gradleye girip
+
+ dependencies {
+        classpath 'com.android.tools.build:gradle:4.1.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.google.gms:google-services:4.3.10' //bunu eklememiz gerekiyor
+    }
+
+6) Üsteki build.gradle dosyasına gelip apply plugin: 'com.google.gms.google-services' bunu
+
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+
+apply plugin: 'com.google.gms.google-services' //buraya ekliyoruz.
+
+7) üsteki build.gradle dosyasına implementation platform('com.google.firebase:firebase-bom:29.0.0') bu kodu
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation platform('com.google.firebase:firebase-bom:29.0.0') //bu şekilde ekliyoruz
+}

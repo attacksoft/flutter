@@ -1,0 +1,49 @@
+ElevatedButton(
+              child: Text("Özel Alert"),
+              onPressed: (){
+
+                showDialog(
+                    context: context,
+                    builder: (BuildContext context){
+                      return AlertDialog(
+                        title: Text("Özel Alert",style: TextStyle(color: Colors.white),),
+                        backgroundColor: Colors.indigoAccent,
+                        content: SizedBox(
+                          height: 80,
+                          child: Column(
+                            children: [
+                              TextField(
+                                controller: tfVeri,
+                                decoration: InputDecoration(
+                                  hintText: "Veri Giriniz",
+                                  labelText: "Veri",
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        actions: [
+                          TextButton(
+                            child: Text("İptal",style: TextStyle(color: Colors.white),),
+                            onPressed: (){
+                              Navigator.pop(context);
+                            },
+                          ),
+
+                          TextButton(
+                            child: Text("Veri Oku",style: TextStyle(color: Colors.white),),
+                            onPressed: (){
+                              String alinanVeri = tfVeri.text;
+                              print("Veri okundu : $alinanVeri");
+                              tfVeri.text = "";
+                              Navigator.pop(context);
+                            },
+                          ),
+
+                        ],
+                      );
+                    }
+                );
+
+              },
+            ),

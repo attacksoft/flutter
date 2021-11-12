@@ -1,0 +1,23 @@
+void harfBulma(String kelime , String harf)
+{
+
+  int sayac = 0;
+
+  for(var i = 0 ; i < kelime.length - 1 ; i++)
+    {
+      if(kelime[i] == harf)
+        {
+         sayac +=1;
+        }
+
+    }
+
+  if(sayac == 0)
+    {
+      print("Kelime içinde harf bulunamadı");
+    }
+  else
+
+    {
+      print(sayac);
+    }

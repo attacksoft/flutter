@@ -1,0 +1,21 @@
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_launcher_icons: "^0.7.0"
+
+flutter_icons:
+    ios: true
+    android: true
+    image_path: "resimler/iosIcon.png"
+    image_path_android: "resimler/androidIcon.png"
+
+
+
+
+
+terminale en son bu yazılacak 
+
+flutter packages pub run flutter_launcher_icons:main

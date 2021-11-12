@@ -1,0 +1,24 @@
+YAZISIZ KULLANIMI  
+
+ floatingActionButton: FloatingActionButton(
+        onPressed: (){
+     print("Fab 1 tıklandı");
+        },
+        tooltip: "Fab1", //basılı tuttuğunda açıklama olarak çıkar
+        child: Icon(Icons.add),
+        backgroundColor: Colors.deepPurple,
+        foregroundColor: Colors.pinkAccent,
+      ),
+
+***********************************************************************************
+YAZILI KULLANIMI 
+
+  floatingActionButton: FloatingActionButton.extended(
+        onPressed: (){
+     print("Fab 1 tıklandı");
+        },
+        icon: Icon(Icons.add),
+        label: Text("fab"),
+        backgroundColor: Colors.deepPurple,
+        foregroundColor: Colors.pinkAccent,
+      ),

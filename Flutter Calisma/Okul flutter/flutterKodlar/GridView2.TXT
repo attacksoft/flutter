@@ -1,0 +1,89 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    new MaterialApp(
+
+    home : GridView.count(crossAxisCount : 4,
+    scrollDirection: Axis.vertical,
+    crossAxisSpacing: 8, //aralarına 8 birim boşluk ekler yanlar
+    mainAxisSpacing: 8, //boşluk ekler alt ve üst
+    childAspectRatio: 0.5,  //dikdörtgen hale getirilebilir.
+    
+    children: [
+
+
+  Container(
+   child: Image.network("https://picsum.photos/seed/picsum/200/300"),
+   color: Colors.red,
+),
+
+ Container(
+  child: Image.network("https://picsum.photos/seed/picsum/200/300"),
+    color: Colors.red,
+),
+
+
+
+ Container(
+    child: Image.network("https://picsum.photos/seed/picsum/200/300"),
+      color: Colors.red,
+),
+
+
+
+ Container(
+   child: Image.network("https://picsum.photos/seed/picsum/200/300"),
+     color: Colors.red,
+),
+
+
+
+ Container(
+  child: Image.network("https://picsum.photos/seed/picsum/200/300"),
+    color: Colors.red,
+),
+
+
+
+ Container(
+  child: Image.network("https://picsum.photos/seed/picsum/200/300"),
+    color: Colors.red,
+),
+
+
+
+ Container(
+
+   child: Image.network("https://picsum.photos/seed/picsum/200/300"),
+     color: Colors.red,
+),
+
+
+
+ Container(
+    child: Image.network("https://picsum.photos/seed/picsum/200/300"),
+      color: Colors.red,
+),
+
+
+
+ Container(
+  child: Image.network("https://picsum.photos/seed/picsum/200/300"),
+    color: Colors.red,
+),
+
+
+
+
+
+
+    ],
+    
+    )
+      
+
+
+  ));
+}
+

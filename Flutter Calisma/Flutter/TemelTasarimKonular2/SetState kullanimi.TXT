@@ -1,0 +1,8 @@
+SetState metodunu kullana bilmek için myHomePage statefulwidget olması gerekmektedir.
+
+SetState sayesinde build yeniden çalışır bu sayeden tasarım anlık olarak güncellenir
+
+
+setState(() {
+              sayac +=1;
+            });

@@ -1,0 +1,4 @@
+break döngüyü tamamen durdururur.
+
+
+continue ise sadece başa alır. yani kısa süre durdurur.

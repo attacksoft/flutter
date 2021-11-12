@@ -1,0 +1,7 @@
+ Text( kontrol ? "DOĞRU" : "YANLIŞ" ,
+              style: TextStyle(
+                color: kontrol ? Colors.green : Colors.red,
+                fontSize: kontrol ? 20 : 50 ,
+                fontWeight: kontrol ? FontWeight.normal : FontWeight.bold,
+              ),
+            ),

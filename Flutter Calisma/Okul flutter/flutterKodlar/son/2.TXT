@@ -1,0 +1,26 @@
+
+
+
+import 'package:flutter/cupertino.dart';
+
+
+
+
+
+
+class diger_sayfa extends StatefulWidget {
+  diger_sayfa({Key key}) : super(key: key);
+
+  @override
+  _diger_sayfa createState() => _diger_sayfa();
+}
+
+class _diger_sayfa extends State<diger_sayfa> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+    
+
+    );
+  }
+}

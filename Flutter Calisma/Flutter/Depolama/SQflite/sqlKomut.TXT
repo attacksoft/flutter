@@ -1,0 +1,4 @@
+SELECT * FROM kisiler ORDER BY RANDOM() LIMIT 2
+
+
+SELECT kisi_ad,kisi_yas,adres_ad FROM kisiler,adres where kisiler.adres_id = adres.adres_id and kisi_yas < 18

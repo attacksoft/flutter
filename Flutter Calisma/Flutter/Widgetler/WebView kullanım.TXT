@@ -1,0 +1,21 @@
+pupspec.yaml dependencies: eklenecek kütüphane
+
+webview_flutter: ^0.3.14+1
+
+
+
+ios internet izni için  ios > Runner > info.plist false bir altına eklenecek kod
+
+<key>io.flutter.embedded_views_preview</keys>
+	<true/>
+
+
+main sınıfına ise
+
+ body: WebView(
+
+        initialUrl: "https://flutter.dev/",
+        javascriptMode: JavascriptMode.unrestricted,
+
+
+      ),

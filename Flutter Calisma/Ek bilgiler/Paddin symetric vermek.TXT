@@ -1,0 +1,3 @@
+padding:const EdgeInsets.symetric(horizontal : 16.0), 
+
+paddin verilen bütün widgetlere sağdan ve soldan 16 px bir boşluk verir.

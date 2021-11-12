@@ -1,0 +1,23 @@
+   ((){
+        if(kontrol)
+          {
+           return Row(
+             mainAxisAlignment: MainAxisAlignment.center,
+             children: [
+               Icon(Icons.done),
+               Text("Doğru"),
+             ],
+           );
+          }
+        else
+          {
+            return Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.cancel),
+                Text("Yanlış"),
+              ],
+            );
+          }
+
+            }())

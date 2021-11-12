@@ -1,0 +1,32 @@
+  ElevatedButton(
+              child: Text("Elevated Buttom",style: TextStyle(color: Colors.white),),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.teal,
+                shadowColor: Colors.black,
+                elevation: 10,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                  side: BorderSide(color: Colors.red),
+                ),
+
+              ),
+              onPressed: (){
+                print("Elevated Buttton tıklandı");
+              },
+            ),
+
+            TextButton(
+              child: Text("TextButton Buttom",style: TextStyle(color: Colors.white),),
+              onPressed: (){
+                print("Text Buttton tıklandı");
+              },
+              style: TextButton.styleFrom(
+                backgroundColor: Colors.teal,
+                shadowColor: Colors.black,
+                elevation: 10,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                  side: BorderSide(color: Colors.red),
+                ),
+              ),
+            ),

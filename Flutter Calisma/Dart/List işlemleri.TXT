@@ -1,0 +1,36 @@
+ var meyveler =<String>[];
+
+  meyveler.add("Çilek");
+  meyveler.add("Muz");
+  meyveler.add("Elma");
+  meyveler.add("Kivi");
+  meyveler.add("Kiraz");
+
+  print(meyveler.isEmpty); // boş bu dolumu kontrol eder
+
+  print(meyveler.length);
+
+  print(meyveler.first);
+
+  print(meyveler.last);
+
+  print(meyveler.contains("Elma"));  //varsa true yoksa false
+
+  var liste = meyveler.reversed;
+  print(liste); //listeyi terse döndürür.
+
+  meyveler.sort();
+  print(meyveler);  //alfabeye göre ters sıralar
+
+  meyveler.removeAt(2);
+  print(meyveler);  //2 index deki değeri siler
+
+
+  meyveler.remove("Kiraz");
+  print(meyveler); //kiraz siler
+
+  
+  meyveler.clear();
+  //bütün listeyi siler
+  
+  

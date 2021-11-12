@@ -1,0 +1,97 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.red,
+      ),
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+
+
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver{
+
+
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text("Anasayfa",style: TextStyle(color: Colors.white,fontSize: 16.0),),
+            Text("Alt başlık",style: TextStyle(color: Colors.white,fontSize: 12.0),),
+          ],
+        ),
+        leading: IconButton(
+          tooltip: "Menu icon",
+          icon: Icon(Icons.dehaze),
+          onPressed: (){
+            print("Menü Icon tıklandı");
+          },
+        ),
+        actions: [
+
+          ElevatedButton(
+            child: Text("ÇIKIŞ"),
+            onPressed: (){
+              print("ÇIKIŞ tıklandı");
+
+            },
+          ),
+
+          IconButton(
+            tooltip: "Bilgi",
+            icon: Icon(Icons.info_outline),
+            onPressed: (){
+              print("bilgi tıklandı");
+            },
+          ),
+
+          IconButton(
+            tooltip: "PopUp Menu",
+            icon: Icon(Icons.more_vert),
+            onPressed: (){
+              print("popup menu tıklandı");
+            },
+          ),
+        ],
+      ),
+      body:Center(
+        child: Center(
+          child: Column(
+            children:<Widget> [
+
+
+
+              ],
+              ),
+        ),
+        ),
+
+
+      );
+
+  }
+
+}
+
+

@@ -1,0 +1,17 @@
+ Switch(
+              value: switchKontrol,
+
+              //Switch true iken hangi renk olacağı
+              activeTrackColor: Colors.lightGreenAccent,
+              activeColor: Colors.green,
+              
+              //Switch true iken hangi renk olacağı
+              inactiveTrackColor: Colors.black54,
+              inactiveThumbColor: Colors.black,
+              
+              onChanged: (veri){
+                setState(() {
+                  switchKontrol = veri;                });
+                 print("Switch : $veri");
+              },
+            ),

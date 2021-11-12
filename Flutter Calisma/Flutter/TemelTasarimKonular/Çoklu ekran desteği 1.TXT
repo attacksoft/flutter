@@ -1,0 +1,61 @@
+ body:LayoutBuilder(
+
+        builder: (BuildContext context , BoxConstraints constraints)
+            {
+              if(constraints.maxWidth < 600)
+                {
+                  return TelefonTasarim();
+                }
+              else
+                {
+                  return TabletTasarim();
+                }
+            }
+
+      ),
+
+
+    );
+  }
+}
+
+class TabletTasarim extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+
+          Image.asset("resimler/manzara1.jpg"),
+          Text("Tablet tasarım",style: TextStyle(fontSize: 30.0),),
+
+
+
+        ],
+      ),
+    );
+  }
+}
+
+
+class TelefonTasarim extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+
+          Image.asset("resimler/manzara1.jpg"),
+          Text("Telefon tasarım",style: TextStyle(fontSize: 20.0),),
+
+
+
+        ],
+      ),
+    );
+  }
+}

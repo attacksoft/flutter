@@ -1,0 +1,88 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_devam/DetaySayfa.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+
+
+  var ulkeler = ["Türkiye","Almanya","İtalya","Rusya","Çin"];
+
+  var ulkelerListe = <String>[];
+  String? secilenUlke = "Türkiye";
+
+  @override
+  void initState() {
+    super.initState();
+    ulkelerListe.add("Türkiye");
+    ulkelerListe.add("Almanya");
+    ulkelerListe.add("Fransa");
+    ulkelerListe.add("İtalya");
+    ulkelerListe.add("Rusya");
+  }
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Scaffold(
+      appBar: AppBar(
+       title: Text("Anasayfa"),
+      ),
+      body:Center(
+        child: Column(
+          children:<Widget>[
+
+            DropdownButton<String>(
+              value: secilenUlke,
+              items: ulkelerListe.map<DropdownMenuItem<String>>((String value){
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text("Ülke : ${value}"),
+                );
+              }).toList(),
+              icon: Icon(Icons.arrow_drop_down),
+              onChanged: (String? secilenVeri){
+                setState(() {
+                  secilenUlke = secilenVeri;
+                });
+              },
+            ),
+
+            ElevatedButton(
+              child: Text("Bilgi al"),
+              onPressed: (){
+                print(secilenUlke);
+              },
+            ),
+
+          ],
+        ),
+      ),
+
+    );
+  }
+}

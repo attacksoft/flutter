@@ -1,0 +1,11 @@
+ios üstüne sağ tıklayıp dosya konumunu aç daha sonra Runner.xcworkspace dosyasını xcode açıp id öğren
+
+ios > Runner appdelage.swift gelip en üste import Firebase ekliyoruz
+
+ios > Runner appdelage.swift gelip 
+
+ ) -> Bool {
+    FirebaseApp.configure() //bunu ekliyoruz
+    GeneratedPluginRegistrant.register(with: self)
+    return super.application(application, didFinishLaunchingWithOptions: launchOptions)
+  }

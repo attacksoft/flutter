@@ -1,0 +1,65 @@
+firebase_core: ^1.10.0
+firebase_database: ^8.1.0
+
+
+import 'dart:collection';
+
+import 'package:flutter/material.dart';
+import 'package:firebase_database/firebase_database.dart';
+
+void main() {
+  runApp(MyApp());
+}
+class MyApp extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+
+  var refText = FirebaseDatabase.instance.reference().child("test");
+
+  @override
+  void initState() {
+    super.initState();
+    var bilgi = HashMap<String , dynamic>();
+    bilgi["mesaj"] = "merhaba";
+    refText.push().set(bilgi);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Firebase"),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+
+          ],
+        ),
+      ),
+
+    );
+  }
+}
+

@@ -1,0 +1,120 @@
+import 'dart:collection';
+import 'package:firebae/Kisiler.dart';
+import 'package:flutter/material.dart';
+import 'package:firebase_database/firebase_database.dart';
+
+void main() {
+  runApp(MyApp());
+}
+class MyApp extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+
+  var refKisiler = FirebaseDatabase.instance.reference().child("kisiler_tablo");
+
+  Future<void> kisiEkle() async{
+    var bilgi = HashMap<String , dynamic>();
+    bilgi["kisi_ad"] = "Zeynep";
+    bilgi["kisi_yas"] = 10;
+    refKisiler.push().set(bilgi);
+  }
+
+  Future<void> kisiSil() async{
+    refKisiler.child("-MoEPJxIC86ElYJPebLJ").remove();
+  }
+
+  Future<void> kisiGuncelle() async{
+    var guncelBilgi = HashMap<String , dynamic>();
+    guncelBilgi["kisi_ad"] = "Yeni SEDAT";
+    guncelBilgi["kisi_yas"] = 30;
+    refKisiler.child("-MoEPlTCOsVQkUkhhk7Y").update(guncelBilgi);
+  }
+
+  Future<void> tumKisiler() async{
+   refKisiler.onValue.listen((event) {
+     var gelendegerler = event.snapshot.value;
+
+     if(gelendegerler != null){
+       gelendegerler.forEach((key , nesne){
+         var gelenKisi = Kisiler.fromJson(nesne);
+
+         print("*************");
+         print("Kisi key : $key");
+         print("kişi ad : ${gelenKisi.kisi_ad}");
+         print("kişi yas : ${gelenKisi.kisi_yas}");
+
+       });
+     }
+   });
+  }
+
+  Future<void> tumKisilerOnce() async{
+    //method çalışıtırıldıkça veriler gelir.
+    refKisiler.once().then((DataSnapshot snapshot) {
+      var gelendegerler = snapshot.value;
+
+      if(gelendegerler != null){
+        gelendegerler.forEach((key , nesne){
+          var gelenKisi = Kisiler.fromJson(nesne);
+
+          print("*************");
+          print("Kisi key : $key");
+          print("kişi ad : ${gelenKisi.kisi_ad}");
+          print("kişi yas : ${gelenKisi.kisi_yas}");
+
+        });
+      }
+    });
+  }
+
+
+
+  @override
+  void initState() {
+    super.initState();
+
+    //kisiEkle();
+    //kisiSil();
+    //kisiGuncelle();
+    //tumKisiler();
+    tumKisilerOnce();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Firebase"),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+
+          ],
+        ),
+      ),
+
+    );
+  }
+}

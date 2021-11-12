@@ -1,0 +1,7 @@
+GestureDetector(
+                onTap: (){
+                  print("Yardım Alındı");
+                },
+                  child: Text("Yardım Al ?")
+              ),
+            ],

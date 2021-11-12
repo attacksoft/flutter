@@ -1,0 +1,3 @@
+const bellekte yer kaplar hemen
+
+final ise sadece kod çaıştığında kaplar

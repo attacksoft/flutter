@@ -1,0 +1,65 @@
+class SayfaB extends StatefulWidget {
+
+  @override
+  _SayfaBState createState() => _SayfaBState();
+}
+
+class _SayfaBState extends State<SayfaB> {
+  Future<bool> geriDonusTusu(BuildContext context) async{
+    print("Geri tuşu tıklandı");
+    return false; //false yaptığımız için geri dönmez
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Sayfa B"),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: (){
+            print("Appbar geri tuşu tıklandı");
+            Navigator.push(context, MaterialPageRoute(builder: (context) => Anasayfa()));
+          },
+        ),
+      ),
+      body: WillPopScope(
+        onWillPop: () => geriDonusTusu(context),
+        child: Center(
+          child: Column(
+
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+
+              RaisedButton(
+                child: Text("Geldiği sayfaya dön"),
+                onPressed: (){
+
+                  Navigator.pop(context);
+
+                },
+              ),
+
+              RaisedButton(
+                child: Text("Anasayfaya Dön"),
+                onPressed: (){
+
+                 Navigator.of(context).popUntil((route) => route.isFirst);
+                },
+              ),
+
+              RaisedButton(
+                child: Text("Anasayfaya Geçiş yap"),
+                onPressed: (){
+
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Anasayfa()));
+                },
+              ),
+            ],
+
+          ),
+        ),
+      ),
+
+    );
+  }
+}

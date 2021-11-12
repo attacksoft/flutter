@@ -1,0 +1,16 @@
+import 'package:timezone/data/latest.dart' as tz;
+import 'package:timezone/timezone.dart' as tz;
+
+
+Future<void> bildirimGecikmeliGoster() async{
+    var androidDetay = AndroidNotificationDetails("channelId", "channelName", "channelDescription",
+      priority: Priority.high,
+      importance: Importance.max,
+    );
+    var iosDetay = IOSNotificationDetails();
+    var bildirim = NotificationDetails(android: androidDetay , iOS: iosDetay);
+
+    tz.initializeTimeZones();
+
+    await flp.zonedSchedule(1, "Gecikmeli", "Gecikmeli içerik", tz.TZDateTime.now(tz.local).add(Duration(seconds: 5)) , bildirim ,uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime , androidAllowWhileIdle: true, payload: "Gecikmeli Payload içerik");
+  }

@@ -1,0 +1,3 @@
+String yazi1 = "34";
+
+int yaziint = int.parse(yazi1);

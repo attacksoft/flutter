@@ -1,0 +1,10 @@
+  Container(
+              width: 200,
+              height: 200,
+              color:Colors.red,
+              child: Align(
+                alignment: Alignment.bottomRight,
+                  child: Text("Merhaba")
+              ),
+
+          ),

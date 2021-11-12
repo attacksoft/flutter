@@ -1,0 +1,4 @@
+ FadeInImage.assetNetwork(
+           placeholder: "resimler/manzara3.jpg",
+           image: "https://picsum.photos/200/300",
+         ),

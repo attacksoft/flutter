@@ -1,0 +1,76 @@
+import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:async';
+class Sayfa1 extends StatefulWidget {
+
+  @override
+  _Sayfa1State createState() => _Sayfa1State();
+}
+
+class _Sayfa1State extends State<Sayfa1> {
+
+  Future<void> oku() async{
+
+    var sp = await SharedPreferences.getInstance();
+
+    String ad = sp.getString("ad") ?? "isim yok";
+    int yas = sp.getInt("yas") ?? 99;
+    double boy = sp.getDouble("boy") ?? 1.90;
+    bool bekarMi = sp.getBool("bekarMi") ?? false;
+
+    var arkadasListe = sp.getStringList("arkadasListe") ?? null;
+
+    print("Ad : ${ad}");
+    print("Yas : ${yas}");
+    print("Boy : ${boy}");
+    print("Bekar mı ? : ${bekarMi}");
+
+
+    //dart 2.0 ile arkadasListe! böyle olacak
+    for(var a in arkadasListe){
+      print("Arkadaş : ${a}");
+    }
+
+  }
+
+
+  Future<void> sil() async{
+
+    var sp = await SharedPreferences.getInstance();
+
+    sp.remove("ad");
+
+  }
+
+  Future<void> guncelle() async{
+
+    var sp = await SharedPreferences.getInstance();
+
+    sp.setInt("ad",100);
+
+  }
+
+
+
+  @override
+  void initState() {
+    super.initState();
+    sil();
+    guncelle();
+    oku();
+  }
+
+
+  @override
+  Widget build(BuildContext context) {
+
+
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("SAYFA 1"),
+      ),
+      body: Center(),
+    );
+  }
+}
